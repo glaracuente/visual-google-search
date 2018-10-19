@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    color: #665544;
+    text-align: center;
+}
+
+#website-form {
+    width: 700px;
+    height: auto;
+    margin: 0 auto;
+}
+
+#website-input {
+    font-size: 120%;
+    color: #5a5854;
+    background-color: #f2f2f2;
+    border: 3px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 5px 5px 5px 30px;
+    display: block;
+    margin-bottom: 10px;
+    background-image: url ("assets/images/search.png");
+    margin: 0 auto;
+    width: 100%;
+}
+
+p {
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Francois One', sans-serif;
+    font-size: 40px;
+    padding: 0px;
+}
+
+
+#add-website {
+    color: #F26767;
+    border-radius: 10px;
+    font-family: 'Chivo:400', sans-serif;
+    font-size: 275%;
+    margin-top: 4%;
+    position: relative;
+    background-color: #F4F4F4;
+}
+
+#add-website:hover {
+    color: #F26767;
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Chivo:900', sans-serif;
+    font-size: 275%;
+    margin-top: 4%;
+    position: relative;
+}
+
+#websitePreview{
+    height: 800px;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+ 
+
+
+
+.websites{
+
+    float: left;
+    display: inline-block;
+ 
+}
+
+.site{
+    margin: 5px;
+    width: 300px;
+    height: 250px;
+    float: right;
+    border-style: solid;
+    border-width: 8px;
+    border-color: #C9CACC;
+    margin: 0 auto;
+}
+
+
+
+
