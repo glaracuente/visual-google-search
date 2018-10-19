@@ -13,7 +13,6 @@ $(document).on("click", '#add-website', function (event) {
 
     var queryURL = "https://www.googleapis.com/customsearch/v1?q=" + searchTerm + "&cx=004310597913395645264:paiega8jyuo&key=AIzaSyDmxfk0xMoLe6Sup48zTQPXmG0wpcgENyY"
 
-
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -22,8 +21,8 @@ $(document).on("click", '#add-website', function (event) {
             console.log(response)
             sites = response.items
             for (var i = 0; i < sites.length; i++) {
-                //var site = sites[i].link
-                var site = sites[i]
+                console.log(site)
+                var site = sites[i].link
                 var auth = '2376-rutgersproject1';
                 var imgUrl = 'http://image.thum.io/get/auth/' + auth + '/' + site;
 
