@@ -43,7 +43,7 @@ $(document).on("click", '#add-website', function (event) {
 
                 var panel = $("<div>");
                 panel.addClass("panel");
-                panel.text("lijglifdjgldjgljgldjgljljflgjghldhlscfsnfhkdghngbfgvnjdslkfjdgrljglidjtilghlsejlgfjlhkksgefkrgjlfjgksjdfjgkdf");
+                panel.text("Click Screenshot to Expand Webpage");
 
 
 
