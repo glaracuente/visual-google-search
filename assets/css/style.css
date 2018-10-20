@@ -71,6 +71,16 @@ h2 {
     margin: 0 auto;
 }
 
+.outerHolder {
+    float: left;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.holder {
+    position: relative;
+}
+
 .site {
     margin: 10px;
     width: 350px;
@@ -78,12 +88,33 @@ h2 {
     float: right;
     border-style: solid;
     border-width: 8px;
-    border-color: #C9CACC;
+}
+.panel {
+    padding: 50px;
+    display: none;
 }
 
+.panel, .flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+    overflow:hidden;
+}
 
 .logo{
     padding-top: 5%;
     width: 40%;
     height: auto;
 }
+
+.info {
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    z-index: 200;
+    width: 350px;
+    height: 50px;
+}
+
+
