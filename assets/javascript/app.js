@@ -1,5 +1,26 @@
 var searchTerm;
 
+// Initial array of history
+try {
+    var storedHistory = JSON.parse(localStorage.getItem("history"))
+    console.log(storedHistory.length)
+}
+catch (err) {
+    var storedHistory = []
+}
+
+for (var i = 0; i < storedHistory.length; i++) {
+    var newDiv = $("<div>").html(storedHistory[i])
+    $("#history-appears-here").prepend(newDiv)
+}
+
+$(document).on("click", "#clearHistory", function () {
+    $("#history-appears-here").empty()
+    storedHistory = []
+    localStorage.setItem("history", JSON.stringify(storedHistory))
+    $("#history-appears-here").append('<button id="clearHistory">Clear History</button>')
+});
+
 $(document).on("click", '#add-website', function (event) {
     event.preventDefault();
 
@@ -7,6 +28,15 @@ $(document).on("click", '#add-website', function (event) {
     if (userInput.length === 0) {
         return
     }
+    console.log(storedHistory)
+    if (storedHistory.indexOf(userInput) === -1) {
+        console.log("here")
+        storedHistory.push(userInput)
+        localStorage.setItem("history", JSON.stringify(storedHistory))
+        var newDiv = $("<div>").html(storedHistory[i])
+        $("#history-appears-here").prepend(newDiv)
+    }
+
     $("#websitePreview").empty()
     searchTerm = userInput
     console.log(searchTerm)
@@ -43,36 +73,44 @@ $(document).on("click", '#add-website', function (event) {
 
                 var panel = $("<div>");
                 panel.addClass("panel");
-                panel.text("lijglifdjgldjgljgldjgljljflgjghldhlscfsnfhkdghngbfgvnjdslkfjdgrljglidjtilghlsejlgfjlhkksgefkrgjlfjgksjdfjgkdf");
-
-
+                panel.html("<p>" + sites[i].title + "</p><p>" + sites[i].snippet + "</p>");
 
                 info.prepend(panel);
                 info.prepend(flip);
 
+                var favButton = $("<button>").addClass("fav fas fa-star")
+
                 var holder = $("<div>").addClass("holder")
                 var outerHolder = $("<div>").addClass("outerHolder")
+                holder.append(favButton)
                 holder.append(preview)
                 holder.append(info)
-
 
                 outerHolder.append(holder)
 
                 $("#websitePreview").prepend(outerHolder)
-
-
             }
 
         });
 
     $(document).on("click", '.flip', function () {
-        $(".panel").slideToggle("slow");
+        $(".panel").slideToggle("slow", function () {
+            console.log("slide")
+        });
 
     });
 
+    $(document).on("click", "#clearHistory", function () {
+        console.log("empry")
+        //$("#history-appears-here").empty()
+    });
+
+
+
+
     var modal = document.getElementById('myModal');
-    var span = document.getElementsByClassName("close")[0];
-    var test = $("<div>")
+    //var span = document.getElementsByClassName("close")[0];
+    var popup = $("<div>")
 
 
     $(document).on("click", '.websites', function () {
@@ -80,25 +118,21 @@ $(document).on("click", '#add-website', function (event) {
         // Get the <span> element that closes the modal
         modal.style.display = "block";
         var url = $(this).attr('data-url');
-        test.html('<iframe width="100%" height="700px" frameborder="0" scrolling="yes" allowtransparency="true" src="' + url + '"></iframe>');
-        $(".modal-content").append(test)
-      // $(".modal-content").html('<iframe width="100%" height="700px" frameborder="0" scrolling="yes" allowtransparency="true" src="' + url + '"></iframe>');
+        popup.html('<iframe width="100%" height="700px" frameborder="0" scrolling="yes" allowtransparency="true" src="' + url + '"></iframe>');
+        $(".modal-content").append(popup)
     });
 
 
     // When the user clicks on <span> (x), close the modal
     $(document).on("click", '.close', function () {
-        console.log("tester")
         modal.style.display = "none";
     });
 
     // When the user clicks anywhere outside of the modal, close it
-    //window.onclick = function (event) {
-    //    if (event.target == modal) {
-    //        modal.style.display = "none";
-    //    }
-   // }
-
-
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
 });
