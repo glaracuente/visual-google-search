@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var searchTerm;
-
+//
     $(document).on("click", '#add-website', function (event) {
         event.preventDefault();
         addWebsite();
