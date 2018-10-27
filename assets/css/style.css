@@ -58,7 +58,18 @@ h2 {
     background-color: white;
 }
 
+#websitePreview {
+    padding-top: 5%;
+    height: 800px;
+    width: 1500px;
+    margin: 0 auto;
+}
 
+
+.websites {
+    float: left;
+    margin: 0 auto;
+}
 
 .outerHolder {
     float: left;
@@ -106,14 +117,6 @@ h2 {
     height: 50px;
 }
 
-.fav {
-    position: absolute;
-    display: inline-block;
-    top: 285px;
-    right: 20px;
-    z-index: 2;
-}
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -153,18 +156,3 @@ h2 {
     cursor: pointer;
 }
 
-
-/*
-
-#websitePreview {
-    padding-top: 5%;
-    height: 800px;
-    width: 1500px;
-    margin: 0 auto;
-}
-
-
-.websites {
-    float: left;
-    margin: 0 auto;
-}

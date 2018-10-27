@@ -3,75 +3,60 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Revealed</title>
+    <title>Look Lander</title>
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- custom css -->
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link href="assets/css/style3.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:500|Black+Han+Sans" rel="stylesheet">
 </head>
 
 <body>
-
-
-    <div class="container_12 clearfix">
-        <div id="header" class="grid_12">
-            <img src="assets/images/layer3.png" class="logo" alt="logo">
-
+    <div class="wrap">
+        <div id="container">
+            <img src="assets/images/print.png" class="print" alt="print">
         </div>
 
-        <form id="website-form">
-            <label for="website-input">
-            </label>
-            <input type="text" id="website-input">
-            <input id="add-website" type="submit">
-        </form>
+        <div id="top"></div>
 
-    </div>
-
-    <div id="history-appears-here">
-        <button id="clearHistory">Clear History</button>
-    </div>
-
-
-    <div class="container">
-        <div class="row" id="websitePreview">
-            
+        <div class="box">
+            <img src="assets/images/logo2.png" class="logo2-item" alt="logo2">
         </div>
-    </div>
 
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
+        <div class="box">
+            <img src="assets/images/logo.png" class="logo-item" alt="logo">
         </div>
 
     </div>
 
 
-    <script src="assets/javascript/app.js">
+    <form class="SearchBox">
+        <div class="Field Field--is-search">
+            <input type="text" name="search" id="website-input" placeholder="    What Would You Like To See Today?"
+                class="SearchBox-query" />
+            <input type="submit" id="add-website" value="👀" class="buttonLoad">
+        </div>
+    </form>
+    <div id="footer"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </script>
 </body>
+
+<script>
+    $(document).ready(function () {
+        $("#add-website").on("click", function (e) {
+            e.preventDefault();
+
+            var userInput = $("#website-input").val()
+            if (userInput.length === 0) {
+                return
+            }
+
+            localStorage.setItem("searchTerm", userInput)
+            window.location.href = "results.html"
+
+        })
+    })
+</script>
+<script></script>
 
 </html>
